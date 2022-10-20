@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Care</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      background-color:
+        #F7F7F7;
+    }
+
+    :root {
+      --primary-color: #1347ff;
+      --secondary-black: #000000;
+      --white-color: #ffffff;
+
+      --primary-black: #626262;
+      --card-color: #FEF7F7;
+    }
+
+    body {
+
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      transition: all 1.3s ease-in-out;
+    }
+
+    li {
+      list-style: none;
+      padding: 2.4rem;
+    }
+
+    a {
+      text-decoration: none;
+      text-transform: capitalize;
+    }
+
+    .nav-link {
+      color: var(--secondary-black);
+    }
+
+    .nav-link:hover,
+    nav-link:active {
+      color: var(--primary-color);
+    }
+
+    .logo {
+      font-family: Inter;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 22px;
+      letter-spacing: 0em;
+
+      font-family: "Inter";
+      font-style: normal;
+
+      text-decoration: var(--primary-color);
+    }
+
+    .nav-btn button,
+    .section-1 .sec1-left button,
+    button{
+      height: 52px;
+      width: 162px;
+      left: 1178px;
+      top: 13px;
+      border-radius: 16px;
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      border: 0px;
+      text-transform: capitalize;
+    }
+
+    button:hover {
+      transform: scale(1.2);
+    }
+    .nav-funbutton{
+      display: none;
+    }
+
+    /* section1  */
+    .section-1 {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      /* padding: 26px 100px; */
+
+    }
+
+    .section-1 img {
+      max-width: 500px;
+    }
+
+    .sec1-para {
+      color: var(--primary-black);
+      width: 448px;
+      margin: 50px 0;
+    }
+
+    .heading {
+      color: var(--primary-color);
+      line-height: 30px;
+    }
+
+    .section-2 {
+      padding: 26px 100px;
+      text-align: center;
+
+    }
+
+    .main-para {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      color:
+        #000000;
+    }
+
+    .card-section {
+      padding: 26px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-content: space-between;
+    }
+
+    .card-section .card {
+      position: relative;
+
+    }
+
+    .card-section .card-icons {
+      width: 50px;
+      height: 50px;
+      background-color: var(--card-color);
+      border-radius: 100%;
+      position: absolute;
+      margin-left: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+    }
+
+    .card-section .card-body {
+
+      padding: 20px;
+      border: 1px solid var(--card-color);
+      margin-top: 30px;
+      background-color: var(--card-color);
+
+    }
+
+    .card-section .card-title {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      color: var(--secondary-black);
+    }
+
+    .card-section .card-text {
+      margin-top: 5px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000000;
+    }
+
+    .card-section .card-link {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      color: #000000;
+      margin-top: 5px;
+    }
+
+    .doctor-section {
+      padding: 26px 100px;
+      text-align: center;
+
+    }
+
+    .doctor-section .doctor-card {
+      margin-top: 26px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .doctor-section img {
+      width: 250px;
+      height: 250px;
+    }
+
+    .doctor-section .card {
+      padding: 10px;
+      border: 0.5px solid #1347FF;
+      border-radius: 20px;
+      background-color: var(--white-color);
+    }
+
+    .doctor-section .card .card-title {
+      color: var(--primary-color);
+    }
+
+    .doctor-section .card-text {
+      color: var(--primary-black);
+    }
+
+    .doctor-section .viewmore {
+      width: 149px;
+      height: 56px;
+      background-color: var(--primary-color);
+      border: 0;
+      border-radius: 20px;
+    }
+
+    /* this is customer section */
+    .customer-section {
+      padding: 26px 100px;
+      text-align: center;
+      margin-top: 26px;
+    }
+
+    .customer-card {
+      margin-top: 26px;
+      display: flex;
+      justify-content: space-between;
+      align-content: space-between;
+    }
+
+    .customer-section .card {
+      border: 0.5px solid var(--primary-color);
+      padding: 10px;
+      background-color: var(--white-color);
+      border-radius: 20px;
+    }
+
+    .customer-section .card-text {
+      margin-top: 20px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: justify;
+      color: var(--primary-black);
+    }
+
+    .customer-section img {
+      width: 80px;
+      height: 80x;
+      border-radius: 100%;
+      float: left;
+    }
+
+    .customer-section .rated {
+      margin-top: 20px;
+      width: 100%;
+      height: 30px;
+      background-color: #E9F5FF;
+    }
+
+    /* this is footer section */
+
+    footer {
+
+      height: auto;
+      background-color: #07306E;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    footer h1 {
+      color: var(--white-color);
+      font-size: 24px;
+    }
+
+    footer .para {
+      color: var(--white-color);
+      width: 200px;
+      font-size: 14px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: var(--white-color);
+      display: block;
+    }
+
+    footer a:hover {
+      color: var(--primary-color);
+    }
+
+    /*  meddia quries*/
+    @media(max-width:1000px) {
+      .flex {
+        flex-direction: column;
+      }
+
+     .nav-funbutton{
+      display: block;
+     }
+     header{
+      justify-content: space-between;
+     }
+      .navbar {
+        flex-direction: column;
+
+        transform: translateX(100%);
+        width: 100vw;
+        height: 100vh;
+        background-color: #000000;
+        position: absolute;
+
+      }
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <header class="flex">
+    <a href="" class="logo">Medicare</a>
+    <nav>
+      <ul class="navbar">
+        <li><a href="" class="nav-link">home</a></li>
+        <li><a href="" class="nav-link">services</a></li>
+        <li><a href="" class="nav-link">Catagories</a></li>
+        <li><a href="" class="nav-link">Help</a></li>
+        <li>
+          <div class="nav-btn">
+            <button>Sign Up</button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="nav-funbutton">
+      <ion-icon name="close-outline"></ion-icon>
+      <ion-icon name="reorder-three-outline"></ion-icon>
+    </div>
+  </header>
+
+  <section class="section-1 flex">
+    <div class="sec1-left">
+      <h1 class="heading">
+        Health Care <br />
+        for Health`s Health
+      </h1>
+      <p class="sec1-para">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacus
+        ac id enim urna. Nulla duis ipsum cras amet aliquam ridiculus sodales.
+      </p>
+      <button>BOOK an Appointment</button>
+    </div>
+    <div class="sec1-right">
+      <img src="https://cdn.pixabay.com/photo/2017/03/14/03/20/woman-2141808__340.jpg" alt="" srcset="">
+    </div>
+  </section>
+
+  <section class="section-2 ">
+    <h1 class="heading">Experience In Multiple Medical <br>
+      Speciallities</h1>
+    <p class="main-para">Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit.</p>
+  </section>
+
+  <section class="card-section">
+    <div class="card" style="width: 18rem;">
+      <div class="card-icons">
+        1
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">General Health Care</h5>
+
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="card-link">Read More</a>
+
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <div class="card-icons">
+        1
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">General Health Care</h5>
+
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="card-link">Read More</a>
+
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <div class="card-icons">
+        1
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">General Health Care</h5>
+
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="card-link">Read More</a>
+
+      </div>
+    </div>
+
+  </section>
+  <section class="card-section">
+    <div class="card" style="width: 18rem;">
+      <div class="card-icons">
+        1
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">General Health Care</h5>
+
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="card-link">Read More</a>
+
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <div class="card-icons">
+        1
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">General Health Care</h5>
+
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="card-link">Read More</a>
+
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <div class="card-icons">
+        1
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">General Health Care</h5>
+
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <a href="#" class="card-link">Read More</a>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section class="doctor-section">
+    <h1 class="heading">Meet Our Experts Docotors</h1>
+
+    <div class="doctor-card">
+
+      <div class="card" style="width: 18rem;">
+        <img src="images/doctor.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">DR.LIHAZ</h5>
+          <p class="card-text">Surgery specialist</p>
+
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="images/doctor.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">DR.LIHAZ</h5>
+          <p class="card-text">Surgery specialist</p>
+
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="images/doctor.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">DR.LIHAZ</h5>
+          <p class="card-text">Surgery specialist</p>
+
+        </div>
+      </div>
+    </div>
+    <button style="float:right; margin-top:26px;">
+      view More</button>
+  </section>
+
+  <section class="customer-section">
+    <h1 class="heading">Customer About US</h1>
+
+    <div class="customer-card">
+      <div class="card" style="width: 18rem;">
+        <p class="title">
+          <img src="images/Ellipse 3.png" class="card-img-top" alt="...">
+          <strong>WELLWISHER</strong>
+        <p>
+          Happy Patient</p>
+        </p>
+        <div class="card-body">
+          <p class="card-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis risus mus quam libero.Accumsan quisqu vulputa
+            .
+            Mollis scelerisque sit sed condimentum nunc
+            , cursus consectetur vestibulum sed. Blandit tristique velit nullam pretium porta fringilla egestas ut diam.
+
+          </p>
+
+          <div class="rated">
+            <span> Rated 4.5/5 </span>
+            <img src="images/Group 512442.png" style="float:right;" class="rated-img" alt="" srcset="">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <p class="title">
+          <img src="images/Ellipse 3.png" class="card-img-top" alt="...">
+          <strong>WELLWISHER</strong>
+        <p>
+          Happy Patient</p>
+        </p>
+        <div class="card-body">
+          <p class="card-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis risus mus quam libero.Accumsan quisqu vulputa
+            .
+            Mollis scelerisque sit sed condimentum nunc
+            , cursus consectetur vestibulum sed. Blandit tristique velit nullam pretium porta fringilla egestas ut diam.
+
+          </p>
+
+          <div class="rated">
+            <span> Rated 4.5/5 </span>
+            <img src="images/Group 512442.png" style="float:right;" class="rated-img" alt="" srcset="">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <p class="title">
+          <img src="images/Ellipse 3.png" class="card-img-top" alt="...">
+          <strong>WELLWISHER</strong>
+        <p>
+          Happy Patient</p>
+        </p>
+        <div class="card-body">
+          <p class="card-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis risus mus quam libero.Accumsan quisqu vulputa
+            .
+            Mollis scelerisque sit sed condimentum nunc
+            , cursus consectetur vestibulum sed. Blandit tristique velit nullam pretium porta fringilla egestas ut diam.
+
+          </p>
+
+          <div class="rated">
+            <span> Rated 4.5/5 </span>
+            <img src="images/Group 512442.png" style="float:right;" class="rated-img" alt="" srcset="">
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <div>
+      <h1>Barvaa</h1>
+      <p class="para">Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit.
+      </p>
+    </div>
+    <div>
+      <h1>Company</h1>
+      <a href="">home</a>
+      <a href="">about</a>
+      <a href="">services</a>
+      <a href="">doctor</a>
+      <a href="">contact</a>
+
+
+    </div>
+    <div>
+      <h1>Sports</h1>
+      <a href="">out team</a>
+      <a href="">team with us</a>
+      <a href="">faq</a>
+      <a href="">privacy policy</a>
+    </div>
+    <div>
+      <h1>Follow US </h1>
+      <a href="">linkden</a>
+      <a href="">facebook</a>
+      <a href="">twitter</a>
+
+    </div>
+
+  </footer>
+
+</body>
+<script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+
+</html>
